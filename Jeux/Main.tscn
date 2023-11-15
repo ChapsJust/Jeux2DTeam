@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bfuflcat1eddi"]
+[gd_scene load_steps=2 format=3 uid="uid://bfuflcat1eddi"]
+
+[ext_resource type="PackedScene" uid="uid://daisepkraw022" path="res://tile_map.tscn" id="1_12c4h"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_12c4h")]
