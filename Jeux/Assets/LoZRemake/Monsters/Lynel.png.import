@@ -17,7 +17,7 @@ dest_files=["res://.godot/imported/Lynel.png-45748359e695725d1af26990c750f960.ct
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

@@ -1,0 +1,170 @@
+[gd_scene load_steps=33 format=3 uid="uid://dgsss1ohiwd7v"]
+
+[ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
+[ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
+[ext_resource type="Texture2D" uid="uid://dbs1n6bx23nys" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-side/hero-idle-side.png" id="3_ys5td"]
+[ext_resource type="Texture2D" uid="uid://bvdc2rkcopeye" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-1.png" id="4_0exij"]
+[ext_resource type="Texture2D" uid="uid://jtvrhd4nh2q8" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-2.png" id="5_adko8"]
+[ext_resource type="Texture2D" uid="uid://1e5mt0ck1epr" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-3.png" id="6_x1yx7"]
+[ext_resource type="Texture2D" uid="uid://ckdtrln05cuh1" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-4.png" id="7_16v2t"]
+[ext_resource type="Texture2D" uid="uid://drah5s48wwl5f" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-5.png" id="8_6pmqv"]
+[ext_resource type="Texture2D" uid="uid://cdi5wmysscwaf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-6.png" id="9_wtqdp"]
+[ext_resource type="Texture2D" uid="uid://xwv1rdv5tieo" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-1.png" id="10_woiuo"]
+[ext_resource type="Texture2D" uid="uid://k4nocd5pf427" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-2.png" id="11_rg5c1"]
+[ext_resource type="Texture2D" uid="uid://cwg1mnyp2b1ot" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-3.png" id="12_plekg"]
+[ext_resource type="Texture2D" uid="uid://8sbdlsne6g20" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-4.png" id="13_emr1j"]
+[ext_resource type="Texture2D" uid="uid://b6in0m62mjahp" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-5.png" id="14_yqyug"]
+[ext_resource type="Texture2D" uid="uid://coea3n4b2u14d" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-6.png" id="15_p7gg8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo3c0"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgn6t"]
+atlas = ExtResource("1_mkm82")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcfnr"]
+atlas = ExtResource("1_141se")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swhb8"]
+atlas = ExtResource("3_ys5td")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uroat"]
+atlas = ExtResource("4_0exij")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpyfg"]
+atlas = ExtResource("5_adko8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr021"]
+atlas = ExtResource("6_x1yx7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_625j5"]
+atlas = ExtResource("7_16v2t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rywt"]
+atlas = ExtResource("8_6pmqv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na46n"]
+atlas = ExtResource("9_wtqdp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dall6"]
+atlas = ExtResource("10_woiuo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8l8x"]
+atlas = ExtResource("11_rg5c1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jxve"]
+atlas = ExtResource("12_plekg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk3s8"]
+atlas = ExtResource("13_emr1j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyo0o"]
+atlas = ExtResource("14_yqyug")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja8hi"]
+atlas = ExtResource("15_p7gg8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vbdd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgn6t")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcfnr")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swhb8")
+}],
+"loop": true,
+"name": &"idle_side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uroat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpyfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr021")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_625j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rywt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na46n")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dall6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8l8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jxve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk3s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyo0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja8hi")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_side",
+"speed": 7.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_fo3c0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7vbdd")
+animation = &"walk_front"
+frame_progress = 0.163146
