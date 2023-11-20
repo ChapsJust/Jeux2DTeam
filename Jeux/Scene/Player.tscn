@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://dgsss1ohiwd7v"]
+[gd_scene load_steps=34 format=3 uid="uid://dgsss1ohiwd7v"]
 
 [ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
 [ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_xdkl7"]
 [ext_resource type="Texture2D" uid="uid://dbs1n6bx23nys" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-side/hero-idle-side.png" id="3_ys5td"]
 [ext_resource type="Texture2D" uid="uid://bvdc2rkcopeye" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-1.png" id="4_0exij"]
 [ext_resource type="Texture2D" uid="uid://jtvrhd4nh2q8" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-2.png" id="5_adko8"]
@@ -159,6 +160,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xdkl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -168,3 +170,5 @@ shape = SubResource("CapsuleShape2D_fo3c0")
 sprite_frames = SubResource("SpriteFrames_7vbdd")
 animation = &"walk_front"
 frame_progress = 0.163146
+
+[node name="Camera2D" type="Camera2D" parent="."]
