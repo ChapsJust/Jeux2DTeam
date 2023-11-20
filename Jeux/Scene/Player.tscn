@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dgsss1ohiwd7v"]
+[gd_scene load_steps=46 format=3 uid="uid://dgsss1ohiwd7v"]
 
 [ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
 [ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
@@ -16,6 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://8sbdlsne6g20" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-4.png" id="13_emr1j"]
 [ext_resource type="Texture2D" uid="uid://b6in0m62mjahp" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-5.png" id="14_yqyug"]
 [ext_resource type="Texture2D" uid="uid://coea3n4b2u14d" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-front/hero-walk-front-6.png" id="15_p7gg8"]
+[ext_resource type="Texture2D" uid="uid://cnba1xeh2td6a" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-1.png" id="17_gonck"]
+[ext_resource type="Texture2D" uid="uid://y22knt7tubfk" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-2.png" id="18_5rew1"]
+[ext_resource type="Texture2D" uid="uid://b2bx624u7ojj1" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-3.png" id="19_bxo5l"]
+[ext_resource type="Texture2D" uid="uid://f5goq4c5jbfd" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-4.png" id="20_10eqm"]
+[ext_resource type="Texture2D" uid="uid://0kjoidleb5hk" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-5.png" id="21_83oik"]
+[ext_resource type="Texture2D" uid="uid://dtingqitc6pp5" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-6.png" id="22_2b6gr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo3c0"]
 radius = 6.0
@@ -79,6 +85,30 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ja8hi"]
 atlas = ExtResource("15_p7gg8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_108o5"]
+atlas = ExtResource("17_gonck")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dumc5"]
+atlas = ExtResource("18_5rew1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3r8r"]
+atlas = ExtResource("19_bxo5l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f88k2"]
+atlas = ExtResource("20_10eqm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roysf"]
+atlas = ExtResource("21_83oik")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_586ov"]
+atlas = ExtResource("22_2b6gr")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vbdd"]
@@ -153,22 +183,41 @@ animations = [{
 "name": &"walk_front",
 "speed": 6.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_108o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dumc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3r8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f88k2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roysf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_586ov")
+}],
 "loop": true,
 "name": &"walk_side",
 "speed": 7.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_xdkl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_fo3c0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vbdd")
-animation = &"walk_front"
-frame_progress = 0.163146
-
-[node name="Camera2D" type="Camera2D" parent="."]
+animation = &"idle_front"
+autoplay = "idle_front"
+frame_progress = 0.0726438
