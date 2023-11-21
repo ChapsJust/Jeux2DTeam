@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhidixmdgib72"]
 
-[ext_resource type="Texture2D" uid="uid://xvgp64xsnotr" path="res://Assets/Tiny RPG Mountain Files/Tiny RPG Mountain Files/png/tileset.png" id="1_5cgai"]
+[ext_resource type="Texture2D" uid="uid://xvgp64xsnotr" path="res://Assets/Tiny RPG Mountain Files/Tiny RPG Mountain Files/png/tileset.png" id="1_qvpr1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hn7nd"]
-texture = ExtResource("1_5cgai")
+texture = ExtResource("1_qvpr1")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0

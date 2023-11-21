@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://xyoh18xrrmda"]
 
-[ext_resource type="Script" path="res://mole.gd" id="1_dltai"]
-[ext_resource type="Texture2D" uid="uid://br6bs36qm7806" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/spritesheets/mole/idle/mole-idle-front.png" id="1_wlmxl"]
+[ext_resource type="Script" path="res://scripts/mole.gd" id="1_40da6"]
+[ext_resource type="Texture2D" uid="uid://br6bs36qm7806" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/spritesheets/mole/idle/mole-idle-front.png" id="2_xh22h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwr6e"]
-atlas = ExtResource("1_wlmxl")
+atlas = ExtResource("2_xh22h")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wmomo"]
@@ -26,7 +26,7 @@ radius = 5.0
 height = 14.0
 
 [node name="mole" type="CharacterBody2D"]
-script = ExtResource("1_dltai")
+script = ExtResource("1_40da6")
 
 [node name="mole" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wmomo")

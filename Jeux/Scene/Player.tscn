@@ -223,7 +223,7 @@ shape = SubResource("CapsuleShape2D_fo3c0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vbdd")
-animation = &"walk_front"
+animation = &"walk_side"
 autoplay = "idle_front"
 
 [node name="Camera2D" type="Camera2D" parent="."]

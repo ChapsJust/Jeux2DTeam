@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbrjrs40i5pe8"]
 
-[ext_resource type="PackedScene" uid="uid://daisepkraw022" path="res://tile_map.tscn" id="1_qitdb"]
+[ext_resource type="PackedScene" uid="uid://daisepkraw022" path="res://Scene/tile_map.tscn" id="1_qitdb"]
 [ext_resource type="PackedScene" uid="uid://dgsss1ohiwd7v" path="res://Scene/Player.tscn" id="2_jk3sg"]
-[ext_resource type="PackedScene" uid="uid://xyoh18xrrmda" path="res://mole.tscn" id="3_6s75q"]
+[ext_resource type="PackedScene" uid="uid://xyoh18xrrmda" path="res://Scene/mole.tscn" id="3_6s75q"]
 
 [node name="Node" type="Node"]
 

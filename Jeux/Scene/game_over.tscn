@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5o8t370am65a"]
 
-[ext_resource type="Script" path="res://game_over.gd" id="1_vb54q"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ouv2t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x1n0n"]
 
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource("1_vb54q")
+script = ExtResource("1_ouv2t")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
