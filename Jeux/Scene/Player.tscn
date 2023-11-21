@@ -223,3 +223,13 @@ animation = &"walk_front"
 autoplay = "idle_front"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="lifebar" type="ProgressBar" parent="."]
+modulate = Color(0.392157, 0.721569, 0.266667, 1)
+offset_left = -4.0
+offset_top = 14.0
+offset_right = 66.0
+offset_bottom = 41.0
+scale = Vector2(0.1, 0.1)
+max_value = 100.035
+show_percentage = false

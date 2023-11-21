@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var vie = 0;
 var speed = 150
 
 func get_input():
@@ -15,6 +16,15 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+	update_health()
 
-
+# il faut créer ennemie
+func update_health():
+	var lifebar = $lifebar
+	lifebar.value = vie
 	
+	# faire afficher la vie si on prend du dommage
+	if vie >= 100 :
+		lifebar.visible = false
+	else :
+		lifebar.visible = true

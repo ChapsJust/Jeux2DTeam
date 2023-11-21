@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://xyoh18xrrmda"]
+
+[ext_resource type="Texture2D" uid="uid://br6bs36qm7806" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/spritesheets/mole/idle/mole-idle-front.png" id="1_wlmxl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwr6e"]
+atlas = ExtResource("1_wlmxl")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmomo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwr6e")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hd4sp"]
+radius = 5.09902
+
+[node name="mole" type="CharacterBody2D"]
+
+[node name="mole" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wmomo")
+animation = &"idle_front"
+
+[node name="zone_de_dommage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone_de_dommage"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_hd4sp")
+
+[node name="collision_mole" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_hd4sp")
