@@ -208,6 +208,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 3
 collision_layer = 3
 script = ExtResource("1_xdkl7")
 
