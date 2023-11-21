@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 window/stretch/mode="canvas_items"
 window/stretch/scale=2.9
 
+[layer_names]
+
+2d_physics/layer_1="Collision mur"
+2d_physics/layer_2="Collision intéragie avec le joueur"
+2d_physics/layer_3="objet"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

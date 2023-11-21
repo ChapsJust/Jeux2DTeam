@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://dtingqitc6pp5" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-6.png" id="22_2b6gr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo3c0"]
-radius = 6.0
-height = 22.0
+radius = 5.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgn6t"]
 atlas = ExtResource("1_mkm82")
@@ -208,6 +208,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 3
 script = ExtResource("1_xdkl7")
 
@@ -218,6 +219,7 @@ shape = SubResource("CapsuleShape2D_fo3c0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vbdd")
-animation = &"idle_front"
+animation = &"walk_front"
 autoplay = "idle_front"
-frame_progress = 0.0726438
+
+[node name="Camera2D" type="Camera2D" parent="."]
