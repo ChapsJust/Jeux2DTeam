@@ -21,7 +21,7 @@ func _physics_process(delta):
 	if vie <= 0 :
 		print("le personnage est mort")
 		self.queue_free()
-		
+		get_tree().change_scene_to_file("res://game_over.tscn")
 # il faut créer ennemie
 func update_health():
 	var lifebar = $lifebar
