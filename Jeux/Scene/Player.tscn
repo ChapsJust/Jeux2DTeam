@@ -208,7 +208,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 3
+z_index = 1
 collision_layer = 3
 script = ExtResource("1_xdkl7")
 
@@ -222,3 +222,5 @@ sprite_frames = SubResource("SpriteFrames_7vbdd")
 animation = &"idle_front"
 autoplay = "idle_front"
 frame_progress = 0.0726438
+
+[node name="Camera2D" type="Camera2D" parent="."]
