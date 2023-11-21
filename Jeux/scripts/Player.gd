@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var vie = 0;
-var speed = 150
+var vie = 99;
+var speed = 80
 
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -17,7 +17,11 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	update_health()
-
+	
+	if vie <= 0 :
+		print("le personnage est mort")
+		self.queue_free()
+		
 # il faut créer ennemie
 func update_health():
 	var lifebar = $lifebar
@@ -28,3 +32,13 @@ func update_health():
 		lifebar.visible = false
 	else :
 		lifebar.visible = true
+
+
+func _on_area_2d_body_entered(body):
+	if body is Enemie:
+		print("salut")
+		print(vie)
+		vie = vie - 10
+		print(vie)
+	
+	

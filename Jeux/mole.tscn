@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://xyoh18xrrmda"]
+[gd_scene load_steps=7 format=3 uid="uid://xyoh18xrrmda"]
 
+[ext_resource type="Script" path="res://mole.gd" id="1_dltai"]
 [ext_resource type="Texture2D" uid="uid://br6bs36qm7806" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/spritesheets/mole/idle/mole-idle-front.png" id="1_wlmxl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwr6e"]
@@ -18,9 +19,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd4sp"]
-radius = 5.09902
+radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncqmq"]
+radius = 5.0
+height = 14.0
 
 [node name="mole" type="CharacterBody2D"]
+script = ExtResource("1_dltai")
 
 [node name="mole" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wmomo")
@@ -34,4 +40,4 @@ shape = SubResource("CircleShape2D_hd4sp")
 
 [node name="collision_mole" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_hd4sp")
+shape = SubResource("CapsuleShape2D_ncqmq")
