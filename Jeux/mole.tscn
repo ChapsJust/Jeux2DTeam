@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd4sp"]
-radius = 7.0
+radius = 25.318
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncqmq"]
 radius = 5.0
@@ -32,12 +32,15 @@ script = ExtResource("1_dltai")
 sprite_frames = SubResource("SpriteFrames_wmomo")
 animation = &"idle_front"
 
-[node name="zone_de_dommage" type="Area2D" parent="."]
+[node name="zone_de_détection" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="zone_de_dommage"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone_de_détection"]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_hd4sp")
 
 [node name="collision_mole" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ncqmq")
+
+[connection signal="body_entered" from="zone_de_détection" to="." method="_on_zone_de_détection_body_entered"]
+[connection signal="body_exited" from="zone_de_détection" to="." method="_on_zone_de_détection_body_exited"]
