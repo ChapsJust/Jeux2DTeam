@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dgsss1ohiwd7v"]
+[gd_scene load_steps=53 format=3 uid="uid://dgsss1ohiwd7v"]
 
 [ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
 [ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
@@ -25,10 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://bs3s4ri608o70" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_01.png" id="23_atv7h"]
 [ext_resource type="Texture2D" uid="uid://cyurajqk1ks8l" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_02.png" id="24_1xc4k"]
 [ext_resource type="Texture2D" uid="uid://dweqye0ukbqxk" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_03.png" id="25_5ph7a"]
+[ext_resource type="AudioStream" uid="uid://0iqkll53qpof" path="res://Assets/Sounds/slash.mp3" id="26_271h2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo3c0"]
 radius = 4.0
-height = 14.0
+height = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgn6t"]
 atlas = ExtResource("1_mkm82")
@@ -211,7 +212,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcdjp"]
-radius = 5.0
+radius = 6.0
 height = 20.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kd6w7"]
@@ -230,6 +231,10 @@ animations = [{
 "name": &"attack",
 "speed": 10.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bslwg"]
+radius = 6.0
+height = 22.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -263,11 +268,15 @@ show_percentage = false
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 5)
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_pcdjp")
 
-[node name="Attack_anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, -18)
+[node name="Attack_Sword" type="Area2D" parent="."]
+position = Vector2(50, 1)
+rotation = 1.5708
+
+[node name="Attack_anim" type="AnimatedSprite2D" parent="Attack_Sword"]
+position = Vector2(-2, -2)
 rotation = 1.86576
 scale = Vector2(0.202622, 0.275987)
 sprite_frames = SubResource("SpriteFrames_kd6w7")
@@ -275,8 +284,14 @@ animation = &"attack"
 frame = 2
 frame_progress = 1.0
 
-[node name="Timer_anim" type="Timer" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Sword"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bslwg")
+
+[node name="Slash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_271h2")
+volume_db = -19.315
+attenuation = 2.21914
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="animation_finished" from="Attack_anim" to="." method="_on_attack_anim_animation_finished"]
-[connection signal="timeout" from="Timer_anim" to="." method="_on_timer_anim_timeout"]
+[connection signal="animation_finished" from="Attack_Sword/Attack_anim" to="." method="_on_attack_anim_animation_finished"]
