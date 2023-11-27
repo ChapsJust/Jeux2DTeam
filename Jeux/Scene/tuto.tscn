@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfudcnlwimg8f"]
+[gd_scene load_steps=6 format=3 uid="uid://ca3pnhprheewn"]
 
 [ext_resource type="Texture2D" uid="uid://en7ocx5igj7j" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/environment/tileset.png" id="1_s3r1a"]
 [ext_resource type="Texture2D" uid="uid://d2f6epnokxevw" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/environment/objects.png" id="2_gbb0v"]
@@ -536,7 +536,7 @@ texture = ExtResource("2_gbb0v")
 sources/0 = SubResource("TileSetAtlasSource_fqnvp")
 sources/1 = SubResource("TileSetAtlasSource_34jke")
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap2" type="TileMap"]
 tile_set = SubResource("TileSet_uk7n0")
 format = 2
 layer_0/name = "Sol"

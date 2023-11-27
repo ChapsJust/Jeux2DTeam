@@ -9,6 +9,7 @@ var can_attack = true
 
 func _ready():
 	$Attack_Sword/Attack_anim.visible = false
+	get_node("Attack_Sword/CollisionShape2D").disabled = true
 
 func _physics_process(delta):
 	get_input()
