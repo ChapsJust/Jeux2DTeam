@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dgsss1ohiwd7v"]
+[gd_scene load_steps=54 format=3 uid="uid://dgsss1ohiwd7v"]
 
 [ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
 [ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
@@ -22,10 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://f5goq4c5jbfd" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-4.png" id="20_10eqm"]
 [ext_resource type="Texture2D" uid="uid://0kjoidleb5hk" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-5.png" id="21_83oik"]
 [ext_resource type="Texture2D" uid="uid://dtingqitc6pp5" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-6.png" id="22_2b6gr"]
+[ext_resource type="Texture2D" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_01.png" id="23_atv7h"]
+[ext_resource type="Texture2D" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_02.png" id="24_1xc4k"]
+[ext_resource type="Texture2D" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_03.png" id="25_5ph7a"]
+[ext_resource type="Texture2D" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_04.png" id="26_2so6k"]
+[ext_resource type="Texture2D" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_05.png" id="27_1w6xw"]
+[ext_resource type="Texture2D" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_06.png" id="28_i2vjx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo3c0"]
-radius = 5.0
-height = 18.0
+radius = 4.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgn6t"]
 atlas = ExtResource("1_mkm82")
@@ -208,8 +214,53 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcdjp"]
-radius = 6.0
-height = 22.0
+radius = 5.0
+height = 20.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kd6w7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_atv7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1xc4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5ph7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2so6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1w6xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_i2vjx")
+}],
+"loop": true,
+"name": &"attack_back",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_atv7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1xc4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5ph7a")
+}],
+"loop": false,
+"name": &"attack_side",
+"speed": 6.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -218,12 +269,13 @@ script = ExtResource("1_xdkl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, 3)
+position = Vector2(0, 10)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_fo3c0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vbdd")
-animation = &"walk_front"
+animation = &"walk_side"
 autoplay = "idle_front"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -239,9 +291,23 @@ max_value = 100.035
 show_percentage = false
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 3)
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_pcdjp")
 
+[node name="Attack_anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 6)
+rotation = -0.113446
+scale = Vector2(0.202622, 0.275987)
+sprite_frames = SubResource("SpriteFrames_kd6w7")
+animation = &"attack_side"
+frame = 2
+frame_progress = 1.0
+
+[node name="Timer_anim" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="Attack_anim" to="." method="_on_attack_anim_animation_finished"]
+[connection signal="timeout" from="Timer_anim" to="." method="_on_timer_anim_timeout"]
