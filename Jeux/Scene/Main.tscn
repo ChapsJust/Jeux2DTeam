@@ -10,6 +10,7 @@
 [node name="TileMap" parent="." instance=ExtResource("1_qitdb")]
 
 [node name="Player" parent="." instance=ExtResource("2_jk3sg")]
+position = Vector2(279, 297)
 
 [node name="mole" parent="." instance=ExtResource("3_6s75q")]
 position = Vector2(70, 202)
