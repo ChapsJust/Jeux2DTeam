@@ -306,5 +306,9 @@ texture = ExtResource("27_c27vb")
 [node name="Marker2D" type="Marker2D" parent="Arc_Shoot/Sprite2D"]
 position = Vector2(1, 0)
 
+[node name="arc_cooldown" type="Timer" parent="Arc_Shoot"]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Attack_Sword" to="." method="_on_attack_sword_body_entered"]
 [connection signal="animation_finished" from="Attack_Sword/Attack_anim" to="." method="_on_attack_anim_animation_finished"]
+[connection signal="timeout" from="Arc_Shoot/arc_cooldown" to="." method="_on_arc_cooldown_timeout"]

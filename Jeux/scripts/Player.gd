@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var fleche : PackedScene
 var vie = 100;
@@ -77,7 +77,7 @@ func attaque_sword():
 func tire_arc():
 	var arc = $Arc_Shoot/Sprite2D
 	var marker = $Arc_Shoot/Sprite2D/Marker2D
-	if Input.is_action_just_pressed("arc"):
+	if Input.is_action_just_pressed("arc") and can_attack:
 		if directions == "right":
 			arc.position = Vector2(52, 3)
 			arc.flip_h = false
@@ -92,8 +92,10 @@ func tire_arc():
 			arc.position = Vector2(27, 4)
 			arc.flip_h = true
 			marker.rotation_degrees = 180
+		can_attack = false
 		$Arc_Shoot.visible = true
 		shoot_arrow(arc.position, arc.flip_h)
+		$Arc_Shoot/arc_cooldown.start()
 
 func shoot_arrow(arrow_position, flip_arrow):
 	var f = fleche.instantiate()
@@ -128,3 +130,12 @@ func _on_attack_anim_animation_finished():
 	$Attack_Sword/Attack_anim.visible = false
 	get_node("Attack_Sword/CollisionShape2D").disabled = true
 	can_attack = true
+
+
+func _on_arc_cooldown_timeout():
+	$Arc_Shoot.visible = false
+	can_attack = true
+
+func _on_attack_sword_body_entered(body):
+	if body is Boss:
+		body.take_damage(10)
