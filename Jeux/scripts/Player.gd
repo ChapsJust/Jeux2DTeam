@@ -137,5 +137,6 @@ func _on_arc_cooldown_timeout():
 	can_attack = true
 
 func _on_attack_sword_body_entered(body):
-	if body is Boss:
-		body.take_damage(10)
+	if body.is_in_group("boss"):
+		body.take_damage(15)
+

@@ -11,3 +11,6 @@ func _process(delta):
 func take_damage(damage_amount):
 	vie_boss -= damage_amount
 	print(vie_boss)
+
+func bruitage():
+	pass

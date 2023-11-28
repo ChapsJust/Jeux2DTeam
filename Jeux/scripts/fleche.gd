@@ -19,3 +19,5 @@ func start(_position, _direction):
 
 func _on_area_2d_body_entered(body):
 	queue_free()
+	if body.is_in_group("boss"):
+		body.take_damage(10)
