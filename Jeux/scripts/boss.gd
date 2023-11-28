@@ -29,6 +29,7 @@ func bruitage():
 
 func _on_comeback_finished():
 	queue_free()
+	get_tree().change_scene_to_file("res://Scene/UI_design/interface_victoire.tscn")
 
 func lifebar():
 	var lifebar = $lifebar

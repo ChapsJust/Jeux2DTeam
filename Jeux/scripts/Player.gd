@@ -2,7 +2,7 @@ class_name Player extends CharacterBody2D
 
 @export var fleche : PackedScene
 var vie = 100;
-var speed = 80
+var speed = 70
 var last_direction = "idle_front"
 var directions = "front"
 var test = true
