@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce1v07w076noj"]
+[gd_scene load_steps=8 format=3 uid="uid://ce1v07w076noj"]
 
-[ext_resource type="Script" path="res://scripts/level2.gd" id="1_cdfmb"]
 [ext_resource type="Texture2D" uid="uid://d2f6epnokxevw" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/environment/objects.png" id="1_wti3d"]
 [ext_resource type="Texture2D" uid="uid://en7ocx5igj7j" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/environment/tileset.png" id="2_ccfh8"]
 [ext_resource type="PackedScene" uid="uid://dgsss1ohiwd7v" path="res://Scene/Player.tscn" id="3_jhysn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q4bf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gni2u"]
 texture = ExtResource("1_wti3d")
@@ -1706,10 +1707,18 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gni2u")
 sources/1 = SubResource("TileSetAtlasSource_xhm6g")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q4bf6"]
+[node name="Node" type="Node"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_cdfmb")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(706, 627)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, -8)
+shape = SubResource("CircleShape2D_q4bf6")
+
+[node name="Player" parent="." instance=ExtResource("3_jhysn")]
+z_index = 0
+position = Vector2(-74, -141)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, -2)
@@ -1746,16 +1755,3 @@ layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 3
 layer_4/z_index = 3
 layer_4/tile_data = PackedInt32Array(1376259, 589824, 1, 1441795, 589824, 2, 1507331, 589824, 3, 1572867, 589824, 4, 1638403, 589824, 5, 1376260, 655360, 1, 1441796, 655360, 2, 1507332, 655360, 3, 1572868, 655360, 4, 1638404, 655360, 5, 1376261, 720896, 1, 1441797, 720896, 2, 1507333, 720896, 3, 1572869, 720896, 4, 1638405, 720896, 5, 1376262, 786432, 1, 1441798, 786432, 2, 1507334, 786432, 3, 1572870, 786432, 4, 1638406, 786432, 5, 1441802, 589824, 1, 1507338, 589824, 2, 1572874, 589824, 3, 1638410, 589824, 4, 1703946, 589824, 5, 1441803, 655360, 1, 1507339, 655360, 2, 1572875, 655360, 3, 1638411, 655360, 4, 1703947, 655360, 5, 1441804, 720896, 1, 1507340, 720896, 2, 1572876, 720896, 3, 1638412, 720896, 4, 1703948, 720896, 5, 1441805, 786432, 1, 1507341, 786432, 2, 1572877, 786432, 3, 1638413, 786432, 4, 1703949, 786432, 5)
-
-[node name="Player" parent="." instance=ExtResource("3_jhysn")]
-z_index = 0
-position = Vector2(-74, -141)
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(706, 627)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(8, -8)
-shape = SubResource("CircleShape2D_q4bf6")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
