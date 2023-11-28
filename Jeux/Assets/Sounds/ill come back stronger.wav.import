@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://rqrc2kktqu38"
-path="res://.godot/imported/ill come back stronger.wav-53272211f5489788c2c50915f4d43fe0.sample"
+path="res://.godot/imported/ill come back stronger.wav-5e1ee6b3eb4135f9a374c186e4ac32df.sample"
 
 [deps]
 
-source_file="res://Assets/ill come back stronger.wav"
-dest_files=["res://.godot/imported/ill come back stronger.wav-53272211f5489788c2c50915f4d43fe0.sample"]
+source_file="res://Assets/Sounds/ill come back stronger.wav"
+dest_files=["res://.godot/imported/ill come back stronger.wav-5e1ee6b3eb4135f9a374c186e4ac32df.sample"]
 
 [params]
 

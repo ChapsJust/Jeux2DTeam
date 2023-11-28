@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dr3j7p0deniy4"
-path="res://.godot/imported/cantkillme.wav-f255269db6ae7d439cf7ddc5b3f6603a.sample"
+uid="uid://gk0w0sm51wt"
+path="res://.godot/imported/imthegod.wav-90437168915bb4710d446565628f1244.sample"
 
 [deps]
 
-source_file="res://Assets/cantkillme.wav"
-dest_files=["res://.godot/imported/cantkillme.wav-f255269db6ae7d439cf7ddc5b3f6603a.sample"]
+source_file="res://Assets/Sounds/imthegod.wav"
+dest_files=["res://.godot/imported/imthegod.wav-90437168915bb4710d446565628f1244.sample"]
 
 [params]
 

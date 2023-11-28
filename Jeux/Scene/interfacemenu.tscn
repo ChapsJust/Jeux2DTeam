@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://w4ff1hrgswja"]
 
-[ext_resource type="Texture2D" uid="uid://cyxm62ib3ajjj" path="res://Assets/QESrOR.webp" id="1_rx3k0"]
 [ext_resource type="Script" path="res://scripts/interfacemenu.gd" id="1_t0437"]
+[ext_resource type="Texture2D" uid="uid://cyxm62ib3ajjj" path="res://Assets/My/QESrOR.webp" id="2_y828a"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,7 +16,7 @@ script = ExtResource("1_t0437")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_rx3k0")
+texture = ExtResource("2_y828a")
 
 [node name="Menu" type="Label" parent="."]
 layout_mode = 0

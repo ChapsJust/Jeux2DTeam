@@ -17,7 +17,6 @@ func bruitage():
 	print(vie_boss)
 	if vie_boss <= 400 and vie_boss >= 380:
 		$cantkillme.play()
-		print("hey")
 	elif vie_boss <= 300 and vie_boss >= 290:
 		$imthegod.play()
 	elif vie_boss <= 150 and vie_boss >= 130:

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://rpdrlorqgqo2"
-path="res://.godot/imported/youshalldie.wav-e34e63764861d97b36cdc9318912ae3a.sample"
+path="res://.godot/imported/youshalldie.wav-445f69886c28de12344055631ccbbe10.sample"
 
 [deps]
 
-source_file="res://Assets/youshalldie.wav"
-dest_files=["res://.godot/imported/youshalldie.wav-e34e63764861d97b36cdc9318912ae3a.sample"]
+source_file="res://Assets/Sounds/youshalldie.wav"
+dest_files=["res://.godot/imported/youshalldie.wav-445f69886c28de12344055631ccbbe10.sample"]
 
 [params]
 

@@ -7,6 +7,7 @@ var last_direction = "idle_front"
 var directions = "front"
 var test = true
 var can_attack = true
+var num_coin = 0
 
 func _ready():
 	$Attack_Sword/Attack_anim.visible = false
@@ -17,7 +18,7 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	update_health()
-
+	
 func get_input():
 	var anim_player = $AnimatedSprite2D
 
@@ -79,17 +80,17 @@ func tire_arc():
 	var marker = $Arc_Shoot/Sprite2D/Marker2D
 	if Input.is_action_just_pressed("arc") and can_attack:
 		if directions == "right":
-			arc.position = Vector2(52, 3)
+			arc.position = Vector2(48, 3)
 			arc.flip_h = false
 			marker.rotation_degrees = 0
 		elif directions == "front":
 			arc.position = Vector2(40, 21)
 			marker.rotation_degrees = 90
 		elif directions == "back":
-			arc.position = Vector2(38, -14)
+			arc.position = Vector2(38, -10)
 			marker.rotation_degrees = 270
 		elif directions == "left":
-			arc.position = Vector2(27, 4)
+			arc.position = Vector2(32, 3)
 			arc.flip_h = true
 			marker.rotation_degrees = 180
 		can_attack = false
@@ -121,8 +122,6 @@ func update_health():
 
 func _on_area_2d_body_entered(body):
 	if body is Enemie:
-		print("salut")
-		print(vie)
 		vie = vie - 10
 		print(vie)
 
@@ -139,4 +138,13 @@ func _on_arc_cooldown_timeout():
 func _on_attack_sword_body_entered(body):
 	if body.is_in_group("boss"):
 		body.take_damage(15)
+	if body.is_in_group("enemie"):
+		body.take_damage(15)
+		
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("coin"):
+		num_coin = num_coin + 1
+		$Coin_UI/num_coin.text = str(num_coin)
+		print(num_coin)
 

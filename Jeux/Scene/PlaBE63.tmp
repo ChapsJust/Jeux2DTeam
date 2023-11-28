@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dgsss1ohiwd7v"]
+[gd_scene load_steps=56 format=3 uid="uid://dgsss1ohiwd7v"]
 
 [ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
 [ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
@@ -28,8 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dweqye0ukbqxk" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_03.png" id="25_5ph7a"]
 [ext_resource type="AudioStream" uid="uid://0iqkll53qpof" path="res://Assets/Sounds/slash.mp3" id="26_271h2"]
 [ext_resource type="Texture2D" uid="uid://8ie5fattm3n5" path="res://Assets/My/Bow .png" id="27_c27vb"]
-[ext_resource type="AudioStream" uid="uid://1sen4mfun33a" path="res://Assets/Sounds/collectcoin.mp3" id="30_20k7t"]
-[ext_resource type="Texture2D" uid="uid://d2j3fx1v0ivpl" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/misc/coin/coin-1.png" id="30_744tw"]
+[ext_resource type="PackedScene" uid="uid://cl2bb7mcfpodx" path="res://Scene/coin_ui.tscn" id="29_3rkiy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo3c0"]
 radius = 4.0
@@ -237,10 +236,10 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bslwg"]
-radius = 9.0
-height = 26.0
+radius = 6.0
+height = 22.0
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 3
 script = ExtResource("1_xdkl7")
@@ -269,7 +268,7 @@ scale = Vector2(0.1, 0.1)
 max_value = 100.035
 show_percentage = false
 
-[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -290,13 +289,12 @@ frame = 2
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Sword"]
-position = Vector2(-3.00001, -1.99999)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_bslwg")
 
 [node name="Slash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_271h2")
-volume_db = 0.075
+volume_db = -19.315
 attenuation = 2.21914
 
 [node name="Arc_Shoot" type="Area2D" parent="."]
@@ -311,33 +309,15 @@ position = Vector2(1, 0)
 
 [node name="arc_cooldown" type="Timer" parent="Arc_Shoot"]
 
-[node name="Coin_UI" type="Control" parent="."]
-z_index = 100
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="coin_ui" parent="." instance=ExtResource("29_3rkiy")]
 
-[node name="TextureRect" type="TextureRect" parent="Coin_UI"]
+[node name="num_coin" type="Label" parent="coin_ui"]
 layout_mode = 0
-offset_left = -182.0
-offset_top = -107.0
-offset_right = -170.0
-offset_bottom = -95.0
-texture = ExtResource("30_744tw")
+offset_left = -563.0
+offset_top = -317.0
+offset_right = -523.0
+offset_bottom = -294.0
 
-[node name="num_coin" type="Label" parent="Coin_UI"]
-layout_mode = 0
-offset_left = -195.0
-offset_top = -113.0
-offset_right = -185.0
-offset_bottom = -87.0
-text = "0"
-
-[node name="coin" type="AudioStreamPlayer2D" parent="Coin_UI"]
-stream = ExtResource("30_20k7t")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Attack_Sword" to="." method="_on_attack_sword_body_entered"]
 [connection signal="animation_finished" from="Attack_Sword/Attack_anim" to="." method="_on_attack_anim_animation_finished"]

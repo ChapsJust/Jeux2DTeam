@@ -29,16 +29,16 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="coin" type="Node2D"]
+[node name="coin" type="Node2D" groups=["coin"]]
 script = ExtResource("1_5td6y")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["coin"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["coin"]]
 position = Vector2(2, 3)
 shape = SubResource("CircleShape2D_iv4l4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" groups=["coin"]]
 position = Vector2(2, 3)
 sprite_frames = SubResource("SpriteFrames_yf431")
 animation = &"coin"

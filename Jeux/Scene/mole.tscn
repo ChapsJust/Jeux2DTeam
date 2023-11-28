@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://xyoh18xrrmda"]
+[gd_scene load_steps=8 format=3 uid="uid://xyoh18xrrmda"]
 
 [ext_resource type="Script" path="res://scripts/mole.gd" id="1_40da6"]
 [ext_resource type="Texture2D" uid="uid://br6bs36qm7806" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/spritesheets/mole/idle/mole-idle-front.png" id="2_xh22h"]
@@ -25,7 +25,11 @@ radius = 7.0
 radius = 5.0
 height = 14.0
 
-[node name="mole" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_o84qf"]
+radius = 39.0
+
+[node name="mole" type="CharacterBody2D" groups=["enemie"]]
+scale = Vector2(1, 1.02737)
 script = ExtResource("1_40da6")
 
 [node name="mole" type="AnimatedSprite2D" parent="."]
@@ -38,6 +42,15 @@ animation = &"idle_front"
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_hd4sp")
 
-[node name="collision_mole" type="CollisionShape2D" parent="."]
+[node name="collision_mole" type="CollisionShape2D" parent="." groups=["enemie"]]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ncqmq")
+
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+shape = SubResource("CircleShape2D_o84qf")
+debug_color = Color(0.666667, 0.498039, 0.329412, 0.419608)
+
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

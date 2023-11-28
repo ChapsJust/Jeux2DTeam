@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7t40pnm0wy6m"]
 
-[ext_resource type="Texture2D" uid="uid://bx57c6wvf64yp" path="res://Assets/Arrows.png" id="1_bmkuf"]
+[ext_resource type="Texture2D" uid="uid://bx57c6wvf64yp" path="res://Assets/My/Arrows.png" id="1_bmkuf"]
 [ext_resource type="Script" path="res://scripts/fleche.gd" id="1_lkqan"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51820"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhidixmdgib72"]
+[gd_scene load_steps=9 format=3 uid="uid://dhidixmdgib72"]
 
 [ext_resource type="Texture2D" uid="uid://xvgp64xsnotr" path="res://Assets/Tiny RPG Mountain Files/Tiny RPG Mountain Files/png/tileset.png" id="1_qvpr1"]
 [ext_resource type="Script" path="res://scripts/caverne.gd" id="1_t3e4v"]
 [ext_resource type="PackedScene" uid="uid://dgsss1ohiwd7v" path="res://Scene/Player.tscn" id="2_t7ueb"]
 [ext_resource type="PackedScene" uid="uid://bdadmbeob1yoe" path="res://Scene/boss.tscn" id="3_qn5l4"]
 [ext_resource type="AudioStream" uid="uid://rmq67qf5hk82" path="res://Assets/Sounds/welcome_home.wav" id="5_1cboi"]
+[ext_resource type="PackedScene" uid="uid://xyoh18xrrmda" path="res://Scene/mole.tscn" id="6_nhqo1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hn7nd"]
 texture = ExtResource("1_qvpr1")
@@ -123,3 +124,21 @@ position = Vector2(521, 506)
 
 [node name="welcomehome" type="AudioStreamPlayer2D" parent="boss"]
 stream = ExtResource("5_1cboi")
+
+[node name="mole" parent="." instance=ExtResource("6_nhqo1")]
+position = Vector2(436, 559)
+
+[node name="mole2" parent="." instance=ExtResource("6_nhqo1")]
+position = Vector2(518, 558)
+
+[node name="mole3" parent="." instance=ExtResource("6_nhqo1")]
+position = Vector2(590, 562)
+
+[node name="mole4" parent="." instance=ExtResource("6_nhqo1")]
+position = Vector2(457, 500)
+
+[node name="mole5" parent="." instance=ExtResource("6_nhqo1")]
+position = Vector2(581, 501)
+
+[node name="mole6" parent="." instance=ExtResource("6_nhqo1")]
+position = Vector2(520, 453)

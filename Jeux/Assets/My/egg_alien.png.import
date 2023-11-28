@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyxm62ib3ajjj"
-path="res://.godot/imported/QESrOR.webp-5f63d8329fad1011742c597645329337.ctex"
+uid="uid://kla2khrt7w40"
+path="res://.godot/imported/egg_alien.png-3cffac5acd827e499a54673fcbbc27d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/QESrOR.webp"
-dest_files=["res://.godot/imported/QESrOR.webp-5f63d8329fad1011742c597645329337.ctex"]
+source_file="res://Assets/My/egg_alien.png"
+dest_files=["res://.godot/imported/egg_alien.png-3cffac5acd827e499a54673fcbbc27d9.ctex"]
 
 [params]
 

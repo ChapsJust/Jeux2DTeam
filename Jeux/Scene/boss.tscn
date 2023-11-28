@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bdadmbeob1yoe"]
 
-[ext_resource type="Texture2D" uid="uid://kla2khrt7w40" path="res://Assets/egg_alien.png" id="1_ly6qt"]
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_r55v5"]
-[ext_resource type="AudioStream" uid="uid://dr3j7p0deniy4" path="res://Assets/cantkillme.wav" id="3_f2v0c"]
-[ext_resource type="AudioStream" uid="uid://rpdrlorqgqo2" path="res://Assets/youshalldie.wav" id="4_44cso"]
-[ext_resource type="AudioStream" uid="uid://gk0w0sm51wt" path="res://Assets/imthegod.wav" id="5_dxo7y"]
-[ext_resource type="AudioStream" uid="uid://rqrc2kktqu38" path="res://Assets/ill come back stronger.wav" id="6_p7dnw"]
+[ext_resource type="Texture2D" uid="uid://kla2khrt7w40" path="res://Assets/My/egg_alien.png" id="2_237iq"]
+[ext_resource type="AudioStream" uid="uid://dr3j7p0deniy4" path="res://Assets/Sounds/cantkillme.wav" id="3_lnbx6"]
+[ext_resource type="AudioStream" uid="uid://rpdrlorqgqo2" path="res://Assets/Sounds/youshalldie.wav" id="4_2oc2r"]
+[ext_resource type="AudioStream" uid="uid://gk0w0sm51wt" path="res://Assets/Sounds/imthegod.wav" id="5_g47hf"]
+[ext_resource type="AudioStream" uid="uid://rqrc2kktqu38" path="res://Assets/Sounds/ill come back stronger.wav" id="6_fcdy0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4jgm"]
 radius = 26.0192
@@ -16,22 +16,22 @@ script = ExtResource("1_r55v5")
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["boss"]]
 position = Vector2(-1, 1)
 scale = Vector2(0.103976, 0.103976)
-texture = ExtResource("1_ly6qt")
+texture = ExtResource("2_237iq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["boss"]]
 shape = SubResource("CircleShape2D_y4jgm")
 
 [node name="cantkillme" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_f2v0c")
+stream = ExtResource("3_lnbx6")
 
 [node name="shalldie" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_44cso")
+stream = ExtResource("4_2oc2r")
 
 [node name="imthegod" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_dxo7y")
+stream = ExtResource("5_g47hf")
 
 [node name="comeback" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_p7dnw")
+stream = ExtResource("6_fcdy0")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

@@ -16,4 +16,4 @@ position = Vector2(279, 297)
 position = Vector2(70, 202)
 
 [node name="coin" parent="." instance=ExtResource("4_pllkc")]
-position = Vector2(-5, 164)
+position = Vector2(202, 324)
