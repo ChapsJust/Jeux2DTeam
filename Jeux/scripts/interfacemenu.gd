@@ -11,7 +11,13 @@ func _process(delta):
 	pass
 
 
-func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scene/Main.tscn")
-	print("yo")
 
+
+
+
+func _on_lancer_pressed():
+	get_tree().change_scene_to_file("res://Scene/Main.tscn")
+
+
+func _on_tuto_pressed():
+	get_tree().change_scene_to_file("res://Scene/tuto.tscn")
