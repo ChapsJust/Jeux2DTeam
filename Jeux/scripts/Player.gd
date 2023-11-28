@@ -104,7 +104,7 @@ func shoot_arrow(arrow_position, flip_arrow):
 
 #Rafraichie la vie et vérifie si mort
 func update_health():
-	var lifebar = $lifebar
+	var lifebar = $Lifebar
 	lifebar.value = vie
 	
 	# faire afficher la vie si on prend du dommage
@@ -141,5 +141,5 @@ func _on_attack_sword_body_entered(body):
 	if body.is_in_group("boss"):
 		body.take_damage(15)
 func _on_piece_collected():
-	
+	pass
 	
