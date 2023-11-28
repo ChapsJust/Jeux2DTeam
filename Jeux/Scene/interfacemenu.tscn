@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://w4ff1hrgswja"]
+[gd_scene load_steps=3 format=3 uid="uid://w4ff1hrgswja"]
 
+[ext_resource type="Texture2D" uid="uid://cyxm62ib3ajjj" path="res://Assets/QESrOR.webp" id="1_rx3k0"]
 [ext_resource type="Script" path="res://scripts/interfacemenu.gd" id="1_t0437"]
 
 [node name="Control" type="Control"]
@@ -11,36 +12,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t0437")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -135.0
-offset_top = -101.0
-offset_right = 135.0
-offset_bottom = 101.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Menu" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Menu"
-horizontal_alignment = 1
-
-[node name="Start" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Start"
-
-[node name="Tuto" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Tutoriel"
-
-[node name="Background" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 651.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rx3k0")
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[node name="Menu" type="Label" parent="."]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 75.0
+offset_right = 226.0
+offset_bottom = 101.0
+text = "Menu"
+
+[node name="Lancer" type="Button" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 120.0
+offset_right = 234.0
+offset_bottom = 151.0
+text = "Lancer"
+
+[node name="Tuto" type="Button" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 161.0
+offset_right = 224.0
+offset_bottom = 192.0
+text = "Tuto"
+
+[connection signal="pressed" from="Lancer" to="." method="_on_lancer_pressed"]
+[connection signal="pressed" from="Tuto" to="." method="_on_tuto_pressed"]
