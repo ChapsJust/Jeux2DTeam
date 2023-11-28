@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://daisepkraw022"]
+[gd_scene load_steps=13 format=3 uid="uid://daisepkraw022"]
 
 [ext_resource type="Script" path="res://scripts/tile_map.gd" id="1_6u0i6"]
 [ext_resource type="Texture2D" uid="uid://blshoxqrsklb5" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/Demo/assets/environment/tileset.png" id="1_ubfnd"]
 [ext_resource type="Texture2D" uid="uid://cpxrx3v1k6b02" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/Demo/assets/environment/objects.png" id="2_2sb00"]
 [ext_resource type="Texture2D" uid="uid://cgov8c3c23g7l" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/Demo/assets/environment/exit-open.png" id="3_1ieiy"]
 [ext_resource type="Texture2D" uid="uid://xvgp64xsnotr" path="res://Assets/Tiny RPG Mountain Files/Tiny RPG Mountain Files/png/tileset.png" id="4_xxse6"]
+[ext_resource type="PackedScene" uid="uid://xyoh18xrrmda" path="res://Scene/mole.tscn" id="6_swqyd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aulx4"]
 texture = ExtResource("1_ubfnd")
@@ -3361,5 +3362,92 @@ layer_2/tile_data = PackedInt32Array(786443, 65537, 11, 851979, 65537, 12, 72090
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(545, -401.25)
 shape = SubResource("RectangleShape2D_l5ou5")
+
+[node name="mole" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1249, 398)
+
+[node name="mole2" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1194, 703)
+
+[node name="mole3" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(573, 692)
+
+[node name="mole4" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(-166, 688)
+
+[node name="mole5" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(-241, 436)
+
+[node name="mole6" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(-111, 63)
+
+[node name="mole7" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(30, 378)
+
+[node name="mole8" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(148, 484)
+
+[node name="mole9" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(464, 221)
+
+[node name="mole10" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(291, 1)
+
+[node name="mole11" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(44, 197)
+
+[node name="mole12" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1035, 419)
+
+[node name="mole13" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(800, 25)
+
+[node name="mole14" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1108, 900)
+
+[node name="mole15" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(762, 423)
+
+[node name="mole16" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(189, 913)
+
+[node name="mole17" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(-383, 272)
+
+[node name="mole18" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(-294, -308)
+
+[node name="mole19" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(399, -298)
+
+[node name="mole20" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1413, 864)
+
+[node name="mole21" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1507, 902)
+
+[node name="mole22" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1041, -314)
+
+[node name="mole23" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1552, 344)
+
+[node name="mole24" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1539, 119)
+
+[node name="mole25" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1504, -64)
+
+[node name="mole26" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(-305, 893)
+
+[node name="mole27" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(-357, 649)
+
+[node name="mole28" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(1236, 153)
+
+[node name="mole29" parent="." instance=ExtResource("6_swqyd")]
+position = Vector2(434, -128)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
