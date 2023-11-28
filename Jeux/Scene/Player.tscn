@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
 [ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_xdkl7"]
-[ext_resource type="PackedScene" uid="uid://c7t40pnm0wy6m" path="res://Scene/fleche.tscn" id="2_2x6p4"]
+[ext_resource type="PackedScene" uid="uid://c7t40pnm0wy6m" path="res://Scene/objet/fleche.tscn" id="2_2x6p4"]
 [ext_resource type="Texture2D" uid="uid://dbs1n6bx23nys" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-side/hero-idle-side.png" id="3_ys5td"]
 [ext_resource type="Texture2D" uid="uid://bvdc2rkcopeye" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-1.png" id="4_0exij"]
 [ext_resource type="Texture2D" uid="uid://jtvrhd4nh2q8" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-back/hero-walk-back-2.png" id="5_adko8"]

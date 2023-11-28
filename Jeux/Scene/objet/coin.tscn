@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnpuf62lj4378"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_b3e6a"]
+[ext_resource type="Texture2D" uid="uid://d2j3fx1v0ivpl" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/misc/coin/coin-1.png" id="2_tp6uu"]
+[ext_resource type="Texture2D" uid="uid://b0xxw52feonx" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/misc/coin/coin-2.png" id="3_ff0i1"]
+[ext_resource type="Texture2D" uid="uid://cae2s4xblpcfw" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/misc/coin/coin-3.png" id="4_57oux"]
+[ext_resource type="Texture2D" uid="uid://dp1j5ua6m4h6b" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/misc/coin/coin-4.png" id="5_nqskg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iv4l4"]
+radius = 4.12311
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf431"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tp6uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ff0i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_57oux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nqskg")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 4.0
+}]
+
+[node name="coin" type="Node2D" groups=["coin"]]
+script = ExtResource("1_b3e6a")
+
+[node name="Area2D" type="Area2D" parent="." groups=["coin"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["coin"]]
+position = Vector2(2, 3)
+shape = SubResource("CircleShape2D_iv4l4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" groups=["coin"]]
+position = Vector2(2, 3)
+sprite_frames = SubResource("SpriteFrames_yf431")
+animation = &"coin"
+frame_progress = 0.0373689
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

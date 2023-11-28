@@ -1,6 +1,7 @@
-class_name Enemie extends CharacterBody2D
-var speed = 35
-var vie_ennemie = 100
+extends CharacterBody2D
+
+var speed = 25
+var vie_ennemie = 150
 var player_target : Object
 
 func _on_detection_body_entered(body):
@@ -15,6 +16,7 @@ func _physics_process(delta):
 		move_and_slide()
 	if vie_ennemie <= 0:
 		queue_free()
+	lifebar()
 
 func _on_detection_body_exited(body):
 	player_target = null
@@ -22,3 +24,12 @@ func _on_detection_body_exited(body):
 func take_damage(damage_amount):
 	vie_ennemie -= damage_amount
 	print(vie_ennemie)
+
+func lifebar():
+	var lifebar = $lifebar
+	lifebar.value = vie_ennemie
+	# faire afficher la vie si on prend du dommage
+	if vie_ennemie >= 150 :
+		lifebar.visible = false
+	else :
+		lifebar.visible = true

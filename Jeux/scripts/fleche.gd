@@ -4,7 +4,7 @@ var speed = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$fleche.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,4 +20,6 @@ func start(_position, _direction):
 func _on_area_2d_body_entered(body):
 	queue_free()
 	if body.is_in_group("boss"):
+		body.take_damage(10)
+	if body.is_in_group("enemie"):
 		body.take_damage(10)

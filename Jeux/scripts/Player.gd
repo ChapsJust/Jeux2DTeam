@@ -146,5 +146,6 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("coin"):
 		num_coin = num_coin + 1
 		$Coin_UI/num_coin.text = str(num_coin)
+		$Coin_UI/coin.play()
 		print(num_coin)
 

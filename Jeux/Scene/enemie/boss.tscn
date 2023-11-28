@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdadmbeob1yoe"]
+
+[ext_resource type="Script" path="res://scripts/boss.gd" id="1_r55v5"]
+[ext_resource type="Texture2D" uid="uid://kla2khrt7w40" path="res://Assets/My/egg_alien.png" id="2_237iq"]
+[ext_resource type="AudioStream" uid="uid://dr3j7p0deniy4" path="res://Assets/Sounds/cantkillme.wav" id="3_lnbx6"]
+[ext_resource type="AudioStream" uid="uid://rpdrlorqgqo2" path="res://Assets/Sounds/youshalldie.wav" id="4_2oc2r"]
+[ext_resource type="AudioStream" uid="uid://gk0w0sm51wt" path="res://Assets/Sounds/imthegod.wav" id="5_g47hf"]
+[ext_resource type="AudioStream" uid="uid://rqrc2kktqu38" path="res://Assets/Sounds/ill come back stronger.wav" id="6_fcdy0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4jgm"]
+radius = 26.0192
+
+[node name="boss" type="CharacterBody2D" groups=["boss"]]
+script = ExtResource("1_r55v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["boss"]]
+position = Vector2(-1, 1)
+scale = Vector2(0.103976, 0.103976)
+texture = ExtResource("2_237iq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["boss"]]
+shape = SubResource("CircleShape2D_y4jgm")
+
+[node name="cantkillme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lnbx6")
+
+[node name="shalldie" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2oc2r")
+
+[node name="imthegod" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g47hf")
+
+[node name="comeback" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_fcdy0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="lifebar" type="ProgressBar" parent="."]
+modulate = Color(0.392157, 0.721569, 0.266667, 1)
+offset_left = -22.0
+offset_top = 24.0
+offset_right = 428.0
+offset_bottom = 61.0
+scale = Vector2(0.1, 0.1)
+max_value = 500.0
+show_percentage = false
+
+[connection signal="finished" from="comeback" to="." method="_on_comeback_finished"]

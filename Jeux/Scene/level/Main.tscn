@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbrjrs40i5pe8"]
+
+[ext_resource type="PackedScene" uid="uid://daisepkraw022" path="res://Scene/level/tile_map.tscn" id="1_qitdb"]
+[ext_resource type="PackedScene" uid="uid://dgsss1ohiwd7v" path="res://Scene/Player.tscn" id="2_jk3sg"]
+[ext_resource type="PackedScene" uid="uid://xyoh18xrrmda" path="res://Scene/enemie/mole.tscn" id="3_6s75q"]
+[ext_resource type="PackedScene" uid="uid://dnpuf62lj4378" path="res://Scene/objet/coin.tscn" id="4_pllkc"]
+
+[node name="Node" type="Node"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_qitdb")]
+
+[node name="Player" parent="." instance=ExtResource("2_jk3sg")]
+position = Vector2(279, 297)
+
+[node name="mole" parent="." instance=ExtResource("3_6s75q")]
+position = Vector2(70, 202)
+
+[node name="coin" parent="." instance=ExtResource("4_pllkc")]
+position = Vector2(202, 324)

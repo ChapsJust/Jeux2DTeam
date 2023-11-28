@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpbf6x7mghg8e"]
+
+[ext_resource type="Script" path="res://scripts/treant.gd" id="1_1eiu8"]
+[ext_resource type="Texture2D" uid="uid://chadrk3ray7kb" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/treant/idle/treant-idle-front.png" id="2_aekx6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgiyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aekx6")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_id4nw"]
+radius = 12.1655
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g8g5r"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jthdd"]
+radius = 92.0217
+
+[node name="treant" type="CharacterBody2D" groups=["enemie"]]
+script = ExtResource("1_1eiu8")
+
+[node name="mole" type="AnimatedSprite2D" parent="." groups=["enemie"]]
+sprite_frames = SubResource("SpriteFrames_vgiyf")
+animation = &"idle_front"
+
+[node name="zone_de_dommage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone_de_dommage" groups=["enemie"]]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_id4nw")
+
+[node name="collision_mole" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_g8g5r")
+
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+shape = SubResource("CircleShape2D_jthdd")
+debug_color = Color(0.666667, 0.498039, 0.329412, 0.419608)
+
+[node name="lifebar" type="ProgressBar" parent="."]
+modulate = Color(0.392157, 0.721569, 0.266667, 1)
+offset_left = -7.0
+offset_top = -14.0
+offset_right = 143.0
+offset_bottom = 23.0
+scale = Vector2(0.1, 0.1)
+max_value = 150.0
+show_percentage = false
+
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
