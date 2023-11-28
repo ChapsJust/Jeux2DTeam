@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var fleche : PackedScene
 var vie = 100;
 var speed = 80
 var last_direction = "idle_front"
@@ -10,6 +11,7 @@ var can_attack = true
 func _ready():
 	$Attack_Sword/Attack_anim.visible = false
 	get_node("Attack_Sword/CollisionShape2D").disabled = true
+	$Arc_Shoot.visible = false
 
 func _physics_process(delta):
 	get_input()
@@ -18,7 +20,6 @@ func _physics_process(delta):
 
 func get_input():
 	var anim_player = $AnimatedSprite2D
-	var attack = $Attack_Sword
 
 	#Les mouvement en 8-way
 	var input_direction = Input.get_vector("A", "D", "W", "S")
@@ -47,8 +48,12 @@ func get_input():
 		anim_player.play(last_direction)
 	else:
 		anim_player.play(last_direction)
+	attaque_sword()
+	tire_arc()
 		
+func attaque_sword():
 	#Les input de l'attaque et de l'area 2d
+	var attack = $Attack_Sword
 	if Input.is_action_just_pressed("souris") and can_attack:
 		attack.global_rotation = get_global_rotation()
 		if directions == "right":
@@ -68,6 +73,32 @@ func get_input():
 		$Attack_Sword/Attack_anim.play("attack")
 		get_node("Attack_Sword/CollisionShape2D").disabled = false
 		$Slash.play()
+
+func tire_arc():
+	var arc = $Arc_Shoot/Sprite2D
+	var marker = $Arc_Shoot/Sprite2D/Marker2D
+	if Input.is_action_just_pressed("arc"):
+		if directions == "right":
+			arc.position = Vector2(52, 3)
+			arc.flip_h = false
+			marker.rotation_degrees = 0
+		elif directions == "front":
+			arc.position = Vector2(40, 21)
+			marker.rotation_degrees = 90
+		elif directions == "back":
+			arc.position = Vector2(38, -14)
+			marker.rotation_degrees = 270
+		elif directions == "left":
+			arc.position = Vector2(27, 4)
+			arc.flip_h = true
+			marker.rotation_degrees = 180
+		$Arc_Shoot.visible = true
+		shoot_arrow(arc.position, arc.flip_h)
+
+func shoot_arrow(arrow_position, flip_arrow):
+	var f = fleche.instantiate()
+	f.start($Arc_Shoot/Sprite2D/Marker2D.global_position, $Arc_Shoot/Sprite2D/Marker2D.global_rotation)
+	get_tree().root.add_child(f)
 
 #Rafraichie la vie et vérifie si mort
 func update_health():
