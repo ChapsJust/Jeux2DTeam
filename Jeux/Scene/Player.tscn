@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dgsss1ohiwd7v"]
+[gd_scene load_steps=56 format=3 uid="uid://dgsss1ohiwd7v"]
 
 [ext_resource type="Texture2D" uid="uid://d3dylkyp3ggfc" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-front/hero-idle-front.png" id="1_141se"]
 [ext_resource type="Texture2D" uid="uid://dxmq3d6x7dgbf" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/idle/hero-idle-back/hero-idle-back.png" id="1_mkm82"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dtingqitc6pp5" path="res://Assets/tiny-RPG-forest-files/tiny-RPG-forest-files/PNG/sprites/hero/walk/hero-walk-side/hero-walk-side-6.png" id="22_2b6gr"]
 [ext_resource type="Texture2D" uid="uid://bs3s4ri608o70" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_01.png" id="23_atv7h"]
 [ext_resource type="Texture2D" uid="uid://cyurajqk1ks8l" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_02.png" id="24_1xc4k"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="24_w2ewr"]
 [ext_resource type="Texture2D" uid="uid://dweqye0ukbqxk" path="res://Assets/Alternative 2 Blue/Alternative 2/1/Alternative_2_03.png" id="25_5ph7a"]
 [ext_resource type="AudioStream" uid="uid://0iqkll53qpof" path="res://Assets/Sounds/slash.mp3" id="26_271h2"]
 [ext_resource type="Texture2D" uid="uid://8ie5fattm3n5" path="res://Assets/Bow .png" id="27_c27vb"]
@@ -257,7 +258,7 @@ autoplay = "idle_front"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="lifebar" type="ProgressBar" parent="."]
+[node name="Lifebar" type="ProgressBar" parent="."]
 modulate = Color(0.392157, 0.721569, 0.266667, 1)
 offset_left = -4.0
 offset_top = 14.0
@@ -307,6 +308,16 @@ texture = ExtResource("27_c27vb")
 position = Vector2(1, 0)
 
 [node name="arc_cooldown" type="Timer" parent="Arc_Shoot"]
+
+[node name="Score" type="Label" parent="."]
+z_index = 4
+offset_left = -193.0
+offset_top = -110.0
+offset_right = -128.0
+offset_bottom = -84.0
+scale = Vector2(0.5, 0.5)
+text = "Score : 0"
+script = ExtResource("24_w2ewr")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Attack_Sword" to="." method="_on_attack_sword_body_entered"]

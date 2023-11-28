@@ -12,7 +12,7 @@ func _ready():
 	$Attack_Sword/Attack_anim.visible = false
 	get_node("Attack_Sword/CollisionShape2D").disabled = true
 	$Arc_Shoot.visible = false
-
+	
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
@@ -125,7 +125,8 @@ func _on_area_2d_body_entered(body):
 		print(vie)
 		vie = vie - 10
 		print(vie)
-
+		
+		
 func _on_attack_anim_animation_finished():
 	$Attack_Sword/Attack_anim.visible = false
 	get_node("Attack_Sword/CollisionShape2D").disabled = true
@@ -139,4 +140,6 @@ func _on_arc_cooldown_timeout():
 func _on_attack_sword_body_entered(body):
 	if body.is_in_group("boss"):
 		body.take_damage(15)
-
+func _on_piece_collected():
+	
+	
